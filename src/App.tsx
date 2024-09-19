@@ -3,7 +3,7 @@ import './App.css'
 import AddTaskForm from "./componenta/AddTaskForm.tsx";
 import Task from "./componenta/Task.tsx";
 
-function App() {
+const App = () => {
   const [tasks, setTasks] = useState([
     { id: '1', text: 'Go to the store'},
     { id: '2', text: 'Buy bread'},
@@ -30,6 +30,10 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
+  const onChangeTaskText = () => {
+
+  };
+
   return (
     <>
       <AddTaskForm currentTask={currentTask} setCurrentTask={setCurrentTask} addNewTask={addNewTask}></AddTaskForm>
@@ -40,6 +44,6 @@ function App() {
       </div>
     </>
   )
-}
+};
 
 export default App
