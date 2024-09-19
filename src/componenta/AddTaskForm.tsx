@@ -1,11 +1,11 @@
 
-const AddTaskForm = () => {
+const AddTaskForm = ({addNewTask, currentTask, setCurrentTask}) => {
     return (
         <div>
             <div className="container">
                 <div className="form">
-                    <input type="text" placeholder={'Enter new task'}/>
-                    <button type={"button"} className={'addNewTaskBtn'}>Add new task</button>
+                    <input type="text" placeholder={'Enter new task'} onChange={(e) => setCurrentTask(e.target.value)} value={currentTask}/>
+                    <button type={"button"} className={'addNewTaskBtn'} onClick={addNewTask}>Add new task</button>
                 </div>
             </div>
         </div>

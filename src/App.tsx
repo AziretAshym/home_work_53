@@ -1,11 +1,41 @@
 import { useState } from 'react'
 import './App.css'
+import AddTaskForm from "./componenta/AddTaskForm.tsx";
+import Task from "./componenta/Task.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState([
+    { id: '1', text: 'Go to the store'},
+    { id: '2', text: 'Buy bread'},
+    { id: '3', text: 'Return home'},
+  ]);
+
+  const [currentTask, setCurrentTask] = useState('');
+
+  const addNewTask = () => {
+    if (currentTask) {
+      const newTask = {
+        id: Date.now().toString(),
+        text: currentTask
+      };
+      setTasks([...tasks, newTask]);
+      setCurrentTask('');
+    }
+  };
+
+
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter((task) => task.id !== taskId));
+  };
 
   return (
     <>
+      <AddTaskForm currentTask={currentTask} setCurrentTask={setCurrentTask} addNewTask={addNewTask}></AddTaskForm>
+      <div className="tasksContainer">
+        {tasks.map((task) => (
+            <Task key={task.id} taskText={task} deleteCurrentTask={() => deleteTask(task.id)}></Task>
+        ))}
+      </div>
     </>
   )
 }
