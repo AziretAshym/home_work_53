@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+.addNewTaskBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addNewTaskBtn:hover {
+    background-color: #0056b3;
+}
+
+.oneTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+    width: 550px;
+    margin: 10px auto;
+}
+
+.oneTask:hover {
+    background-color: #f1f1f1;
+}
+
+.taskText {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.taskDeleteBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.taskDeleteBtn:hover {
+    transform: scale(1.1);
+}
+
+.taskDeleteBtn img {
+    width: 24px;
+    height: 24px;
+}
+

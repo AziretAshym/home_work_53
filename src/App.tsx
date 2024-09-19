@@ -20,6 +20,8 @@ function App() {
       };
       setTasks([...tasks, newTask]);
       setCurrentTask('');
+    } else {
+      alert('Fill in the input field!')
     }
   };
 
