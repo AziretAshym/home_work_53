@@ -30,10 +30,6 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
-  const onChangeTaskText = () => {
-
-  };
-
   return (
     <>
       <AddTaskForm currentTask={currentTask} setCurrentTask={setCurrentTask} addNewTask={addNewTask}></AddTaskForm>
